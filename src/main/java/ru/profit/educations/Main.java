@@ -19,10 +19,8 @@ public class Main {
         List<Cat> cats = DataHouse.getCats(10);
         System.out.println("Сгенерированные коты:");
         showAnimals(cats);
-        Long begin = Util.getCurrentPoint();
         List<Cat> orderedCats = doSort(cats, DataHouse.comparatorByName());
-        System.out.println("Скорострельность сортировки  = " + (Util.getCurrentPoint() - begin));
-        System.out.println("Первоначальный список:");
+        System.out.println("Как изменился первоначальный список:");
         showAnimals(cats);
         System.out.println("Список выданный сортировщиком:");
         showAnimals(orderedCats);
@@ -34,7 +32,9 @@ public class Main {
         String sorterType = Util.getStringFromIn("Укажите тип сортировки. " + Arrays.toString(SorterType.values()));
         try {
             Sorter sorter = sorterFactory.getInstance(SorterType.valueOf(sorterType));
+            Long begin = Util.getCurrentPoint();
             sortedCats = sorter.sort(cats, comparator);
+            System.out.println("Длительность сортировки " + (Util.getCurrentPoint() - begin));
         } catch (IllegalArgumentException e) {
             System.out.println("from IAE " + e.getMessage());
         } catch (Exception e) {
