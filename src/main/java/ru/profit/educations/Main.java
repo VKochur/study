@@ -4,6 +4,7 @@ import ru.profit.educations.algorithm.sort.Sorter;
 import ru.profit.educations.algorithm.sort.SorterFactory;
 import ru.profit.educations.algorithm.sort.SorterType;
 import ru.profit.educations.entity.Cat;
+import ru.profit.educations.revers.impl.StringReverser;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,6 +14,19 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         doSortExample();
+        doReversExample();
+    }
+
+    private static void doReversExample() {
+        final String TEXT = "Мама мыла раму, а папа курил трубку! Потом мама спросила: \"И долго ты будешь курить?!\" \n \"Бросаю...\" -лениво ответил отец. Затем пересел на диван, включил футбол.";
+        final String TEXT2 = "     Однажды, в студенную зимнюю пору, я из лесу вышел. Был сильный мороз. ";
+
+        StringReverser reverser = new StringReverser();
+        System.out.println(TEXT);
+        System.out.println(reverser.revers(TEXT));
+        System.out.println();
+        System.out.println(TEXT2);
+        System.out.println(reverser.revers(TEXT2));
     }
 
     private static void doSortExample() {
