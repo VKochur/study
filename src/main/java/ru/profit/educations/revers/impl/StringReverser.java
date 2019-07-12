@@ -13,7 +13,10 @@ public class StringReverser implements Reverser {
             for (int i = 0; i < chars.length; i++){
                 reversChars[i] = chars[chars.length - 1 - i];
             }
-            result += new String(reversChars) + " ";
+            result += new String(reversChars);
+            if(word != array[array.length-1]){
+                result += " ";
+            }
         }
 
         return result;
