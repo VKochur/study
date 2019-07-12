@@ -8,7 +8,7 @@ public abstract class Animal {
     private String id;
     private double weight;
 
-    public Animal(){
+    public Animal() {
         id = UUID.randomUUID().toString();
     }
 
@@ -20,7 +20,7 @@ public abstract class Animal {
         this.weight = weight;
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
@@ -40,6 +40,8 @@ public abstract class Animal {
     @Override
     public String toString() {
         return "Animal{" +
+                getClass() + " "
+                +
                 "id='" + id + '\'' +
                 ", weight=" + weight +
                 '}';

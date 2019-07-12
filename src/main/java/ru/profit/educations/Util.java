@@ -1,5 +1,8 @@
 package ru.profit.educations;
 
+import ru.profit.educations.entity.Animal;
+import ru.profit.educations.entity.Flyable;
+
 import java.util.Scanner;
 
 public class Util {
@@ -32,4 +35,5 @@ public class Util {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
+
 }

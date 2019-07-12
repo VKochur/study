@@ -9,6 +9,8 @@ public class CatTest {
     public void testSpeak() {
         String expected = Cat.class + " Tom speaks: hello";
         assertEquals(expected, new Cat("Tom").speak("hello"));
+
+
     }
 
     @Test (expected = NullPointerException.class)
@@ -16,5 +18,4 @@ public class CatTest {
         Cat cat = null;
         assertEquals("",cat.speak("something"));
     }
-
 }
