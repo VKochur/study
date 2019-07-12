@@ -2,6 +2,8 @@ package ru.profit.teamcenter.import_tp.app.model.repository;
 
 import org.junit.Test;
 
+import java.nio.file.Paths;
+
 import static org.junit.Assert.*;
 
 public class TpContentFoxTest {
@@ -10,11 +12,13 @@ public class TpContentFoxTest {
     public void testContent(){
         TpContent contentExpect = new TpContentImpl();
         TpContent contentActual = new TpContentFox();
+
         try {
-            System.out.println(contentExpect.getContent("C:\\Users\\User\\source\\profconfig\\3741-3802034.DBF"));
+            String path = Paths.get(getClass().getClassLoader().getResource("3741-3802034.DBF").toURI()).toString();
+            System.out.println(contentExpect.getContent(path));
             System.out.println("-----------------------");
-            System.out.println(contentActual.getContent("C:\\Users\\User\\source\\profconfig\\3741-3802034.DBF"));
-            assertEquals(contentExpect.getContent("C:\\Users\\User\\source\\profconfig\\3741-3802034.DBF"),contentActual.getContent("C:\\Users\\User\\source\\profconfig\\3741-3802034.DBF"));
+            System.out.println(contentActual.getContent(path));
+            assertEquals(contentExpect.getContent(path),contentActual.getContent(path));
         } catch (Exception e) {
             e.printStackTrace();
         }
