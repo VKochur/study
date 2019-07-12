@@ -1,0 +1,68 @@
+{
+	"signs" : ["test", "A", "Б", "б", "", "М", "O", "й", "o", "п", "т", "ы", "л", "к", "р", "в", "b", "c", "t", "r", "k", "M", "m"],
+	"associationSignAndType" : {
+		"A" : ["OPERATION", "INSTRUCTION"],
+		"Б" : ["EQUIPMENT"], 
+		"б" : ["EQUIPMENT"], 
+		"М" : ["MATERIAL_VSP"], 
+		"O" : ["TRANSITION"], 
+		"п" : ["TOOL"], 
+		"т" : ["TOOL"], 
+		"ы" : ["TOOL_SLESAR"], 
+		"л" : ["TOOL_SPECIAL"], 
+		"к" : ["TOOL_CONTR"], 
+		"р" : ["TOOL"], 
+		"в" : ["TOOL_VSPOMAG"], 
+		"b" : ["TOOL_VSPOMAG"], 
+		"c" : ["SOG"], 
+		"t" : ["TOOL_RI"], 
+		"r" : ["TOOL_RI"], 
+		"k" : ["TOOL_MEASHURER"], 
+		"M" : ["TOOL_MEASHURER"], 
+		"m" : ["TOOL_MEASHURER"]
+	},
+	"attributesMapping" : {
+		"" : [ { "1" : "name", "2" : "number"} ],
+		"A" : [
+			{"1":"number manufactory", "2":"number", "3":"number submanufactory", "4":"code", "5":"name"}, 
+			{"6":"number"}
+		], 
+		"M" : [	{"1":"total name"} ], 
+		"O" : [	{"1":"number", "6":"text"} ], 
+		"b" : [	{"1":"total name"} ], 
+		"c" : [	{"1":"name"} ],
+		"k" : [	{"1":"total name"} ], 
+		"m" : [	{"1":"total name"} ], 
+		"o" : [	{"1":"text"} ], 
+		"r" : [	{"1":"total name"} ], 
+		"t" : [	{"1":"total name"} ], 
+		"test" : [ {"1":"number", "2":"code", "3":"name", "4":"number submanufactory"} ], 
+		"Б" : [ {"1":"name", "2":"number", "3":"model", "4":"mechanization level", "5":"profession code", "6":"category", "7":"koid"} ], 
+		"М" : [ {"1":"name"} ], 
+		"б" : [ {"1":"name", "2":"number", "3":"model", "4":"mechanization level", "5":"profession code", "6":"category", "7":"koid"} ], 
+		"в" : [ {"1":"total name"} ], 
+		"й" : [ {"1":"text"} ], 
+		"к" : [ {"1":"total name"} ], 
+		"л" : [ {"1":"total name"} ], 
+		"п" : [ {"1":"total name"} ], 
+		"р" : [ {"0":"total name"} ], 
+		"т" : [ {"1":"total name"} ], 
+		"ы" : [ {"1":"total name"} ]
+	},
+	"supportingSignsAndAssociation" : {
+		"" : ["б", "Б"],
+		"test" : ["O"],
+		"й" : ["O"],
+		"o" : ["O"]
+	},
+	"directionForSearchBaseLineBySupportingLine" : {
+		"" : "DOWN",
+		"test" : "DOWN",
+		"й" : "UP", 
+		"o" : "UP"
+	},
+	"separators" : {
+		"A" : {"6":","},
+		"test" : {"1":",", "2":",", "3":","}
+	}
+}
