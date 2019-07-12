@@ -44,7 +44,7 @@ public class MainExampleException {
 
     }
 
-    public static void sendToFly(Animal animal){
+    public static void sendToFly(Animal animal) {
         try {
             ((Flyable) animal).fly();
         } catch (ClassCastException e) {
@@ -58,7 +58,7 @@ public class MainExampleException {
         }
     }
 
-    public static void checkedSendToFly(Animal animal){
+    public static void checkedSendToFly(Animal animal) {
         if (animal instanceof Flyable) {
             ((Flyable) animal).fly();
             System.out.println("улетели");
@@ -81,7 +81,7 @@ public class MainExampleException {
         }
     }
 
-    public static void fly(Set<Animal> animals){
+    public static void fly(Set<Animal> animals) {
         for (Animal animal : animals) {
             try {
                 fly(animal);
