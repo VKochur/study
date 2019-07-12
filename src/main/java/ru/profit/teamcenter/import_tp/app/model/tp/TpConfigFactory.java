@@ -1,6 +1,10 @@
 package ru.profit.teamcenter.import_tp.app.model.tp;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class TpConfigFactory {
     public static TpConfig getInstance(String pathConfigFile) throws IOException {
@@ -14,6 +18,9 @@ public class TpConfigFactory {
     }
 
     public static TpConfig getInstanceFromJson(String pathConfigFile) throws IOException{
-        return null;
+        byte[] jsonData = Files.readAllBytes(Paths.get(pathConfigFile));
+        ObjectMapper objectMapper = new ObjectMapper();
+        TpConfig tpConfig = objectMapper.readValue(jsonData,TpConfig.class);
+        return tpConfig;
     }
 }
