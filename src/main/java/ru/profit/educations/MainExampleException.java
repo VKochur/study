@@ -73,11 +73,11 @@ public class MainExampleException {
         fly.invoke(animal);
     }
 
-    public static void fly(Animal animal) throws MyCheсkedException {
+    public static void fly(Animal animal) throws MyCheckedException {
         try {
             checkedSendToFly(animal);
         } catch (IllegalArgumentException e) {
-            throw new MyCheсkedException(e.getMessage());
+            throw new MyCheckedException(e.getMessage());
         }
     }
 
@@ -85,7 +85,7 @@ public class MainExampleException {
         for (Animal animal : animals) {
             try {
                 fly(animal);
-            } catch (MyCheсkedException e) {
+            } catch (MyCheckedException e) {
                 System.out.println(e.getMessage());
             }
         }
